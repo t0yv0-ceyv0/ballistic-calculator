@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.main-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.settings {
+    flex: 0 0 5%;
+    max-width: 150px;
+    height: 85vh;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.settings label {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.settings input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.notes-container {
+    flex: 1;
+    height: 85vh;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    
+}
+
+.notes-container h1 {
+    margin: 0 0 10px 0;
+}
+
+#notes {
+    overflow-y: auto;
+    width: 90%;
+}
+
+#notes::-webkit-scrollbar {
+    background-color: #000;
+    width: 12px;
+    border-radius: 10px;
+}
+
+#notes::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+#notes::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.5, #a520ca), color-stop(1, #2681cc));
+    border-radius: 10px;
+}
+
+.note {
+    flex: 1;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+#noteNumber {
+    text-align: end;
+    color: gray;
+    padding-right: 10px;
+}
+
+#map {
+    width: 85vh;
+    height: 85vh;
+    border-radius: 9px;
+    border: 2px solid white;
+}

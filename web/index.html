@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Viewer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="settings">
+            <label for="max_scale">Максимальне наближення:</label>
+            <input id="max_scale" type="number" step="0.1" value="2" min="0" max="10"/>
+            <label for="min_scale">Максимальне віддалення:</label>
+            <input id="min_scale" type="number" step="0.1" value="-3.5" min="-10" max="0"/>
+            <label for="shell_start_velocity">Швидкість вильоту снаряду (м/с):</label>
+            <input id="shell_start_velocity" type="number" step="0.1" value="200"/>
+        </div>
+        
+        <div id="map"></div>
+        
+        <div class="notes-container">
+            <h1>Нотатки</h1>
+            <div id="notes">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="map.js"></script>
+    <script src="calculator.js"></script>
+    <script src="notes.js"></script>
+    <script src="input_validation.js"></script>
+    
+</body>
+</html>
