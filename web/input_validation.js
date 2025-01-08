@@ -18,6 +18,12 @@ function validateInput(input) {
         const minScale = parseFloat(document.getElementById('min_scale').value);
         updateZoomLimits(minScale, maxScale);
     }
+    else if (input.id === 'map_height') {
+        setMapHeight(input.value);
+    }
+    else if (input.id === 'map_width') {
+        setMapWidth(input.value);
+    }
     else if (input.id === 'shell_start_velocity') {
         setShellStartVelocity(input.value);
     }
@@ -30,9 +36,20 @@ inputs.forEach(input => {
     input.addEventListener('change', () => validateInput(input));
 });
 
+document.getElementById('map-upload').addEventListener('change', setMapImg);
+
 document.addEventListener('DOMContentLoaded', () => {
-    const input = document.getElementById('shell_start_velocity');
-    if (input) {
-        setShellStartVelocity(input.value);
+    const velocity = document.getElementById('shell_start_velocity');
+    const mapHeight = document.getElementById('map_height');
+    const mapWidth = document.getElementById('map_width');
+
+    if (velocity) {
+        setShellStartVelocity(velocity.value);
+    }
+    if (mapHeight) {
+        setMapHeight(mapHeight.value);
+    }
+    if (mapWidth) {
+        setMapWidth(mapWidth.value);
     }
 });

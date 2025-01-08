@@ -1,12 +1,14 @@
-
-let map;
-
-const imageUrl = '11.png';
-const mapWidthMeters = 10000;
-const mapHeightMeters = 10000;
 const img = new Image();
 
-img.src = imageUrl;
+let mapElements = {};
+let map;
+let imageUrl = "11.png";
+let mapWidthMeters;
+let mapHeightMeters;
+
+if (imageUrl) {
+    img.src = imageUrl;
+}
 
 img.onload = () => {
 
@@ -33,7 +35,6 @@ img.onload = () => {
 
     map.fitBounds(bounds);
 
-    let mapElements = {};
     let markers = [];
     let points = [];
 
@@ -108,3 +109,28 @@ function updateZoomLimits(minZoom, maxZoom) {
     map.setMinZoom(minZoom);
     map.setMaxZoom(maxZoom);
 }
+
+function setMapWidth(newWidth) {
+    mapWidthMeters = newWidth;
+}
+
+function setMapHeight(newHeight) {
+    mapHeightMeters = newHeight;
+}
+
+function setMapImg(event) {
+    const newImg = event.target.files[0];
+    if (newImg && newImg.type === 'image/png') {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            imageUrl = e.target.result;
+            img.src = imageUrl;
+        };
+
+        reader.readAsDataURL(newImg);
+    } else {
+        console.error("Будь ласка, виберіть файл PNG.");
+    }
+}
+

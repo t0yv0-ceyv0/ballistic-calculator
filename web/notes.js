@@ -5,6 +5,11 @@ function createNote(distance, elevation, arrivalTime, uuid) {
     noteContainer.classList.add("note");
     noteContainer.id = uuid;
 
+    const colorPicker = document.createElement("input");
+    colorPicker.type = "color";
+    colorPicker.id = "color_picker";
+    colorPicker.value = "#fc0303";
+
     const noteNumber = document.createElement("p");
     noteNumber.id = "noteNumber";
     noteNumber.textContent = "№: ";
@@ -18,6 +23,7 @@ function createNote(distance, elevation, arrivalTime, uuid) {
     const arrivalTimeP = document.createElement("p");
     arrivalTimeP.textContent = `Час підльоту: ${arrivalTime} с`;
 
+    noteContainer.appendChild(colorPicker);
     noteContainer.appendChild(noteNumber);
     noteContainer.appendChild(distanceP);
     noteContainer.appendChild(elevationP);
@@ -25,6 +31,14 @@ function createNote(distance, elevation, arrivalTime, uuid) {
 
     notesContainer.prepend(noteContainer);
     
+    colorPicker.addEventListener('input', function () {
+        const selectedColor = colorPicker.value;
+        
+        if (mapElements[uuid]?.lines) {
+            mapElements[uuid].lines.setStyle({ color: selectedColor });
+        }
+    });
+
     updateNoteNumbers();
 }
 
