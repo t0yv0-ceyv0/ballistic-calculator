@@ -42,6 +42,11 @@ function createNote(distance, elevation, arrivalTime, uuid) {
     updateNoteNumbers();
 }
 
+function clearNotes() {
+    const notesContainer = document.getElementById("notes");
+    notesContainer.innerHTML = '';
+}
+
 function deleteNote(uuid) {
     const notesContainer = document.getElementById("notes");
     const noteToDelete = document.getElementById(uuid);

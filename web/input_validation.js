@@ -36,7 +36,7 @@ inputs.forEach(input => {
     input.addEventListener('change', () => validateInput(input));
 });
 
-document.getElementById('map-upload').addEventListener('change', setMapImg);
+document.getElementById('map-upload').addEventListener('change', setMapURL);
 
 document.addEventListener('DOMContentLoaded', () => {
     const velocity = document.getElementById('shell_start_velocity');
