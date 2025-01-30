@@ -1,0 +1,16 @@
+.notes-container h1 {
+    margin: 0 0 10px 0;
+}
+
+.note {
+    flex: 1;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+#noteNumber {
+    text-align: end;
+    color: gray;
+    padding-right: 10px;
+}
